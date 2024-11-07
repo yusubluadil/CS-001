@@ -12,15 +12,24 @@ from datetime import datetime
 
 
 DB = []
+deleted_ids = []
 
 # utils
 def generate_id() -> int:
     try:
         end_item = DB[-1]
         end_item_id = end_item.get('id')
-        return end_item_id + 1
+        unique_id = end_item_id + 1
     except:
-        return 1
+        unique_id = 1
+
+    try:
+        while unique_id <= max(deleted_ids):
+            unique_id += 1
+    except:
+        pass
+
+    return unique_id
 
 def str_to_date(publishing_date: str) -> datetime.date:
     date = datetime.strptime(publishing_date, "%d-%m-%Y").date()
@@ -84,6 +93,7 @@ def delete_book(*, db: list, id: int):
 
     if book is not None:
         db.remove(book)
+        deleted_ids.append(book.get('id'))
         print(f'{id} İD-li kitab müvəffəqiyyətlə silindi!')
     else:
         print('Daxil etidiyiniz İD-yə uyğun kitab tapılmadı!')
@@ -99,7 +109,11 @@ while True:
 
 0 -> Çıxış et.
 """)
-    operation = int(input('Əməliyyatı daxil edin: '))
+    try:
+        operation = int(input('Əməliyyatı daxil edin: '))
+    except:
+        print('Daxil etdiyiniz əməliyyat mövcud deyil!')
+        continue
 
     if operation == 1:
         book_name = input("Kitab adını daxil edin: ")
