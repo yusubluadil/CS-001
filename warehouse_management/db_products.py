@@ -1,0 +1,2 @@
+DB = []
+deleted_ids = []
