@@ -27,6 +27,8 @@ print(type(ages))
 #     ... # ellipsis
 
 
+# BankAccount
+
 
 
 my_dict = dict(a=1, b=2, c=3)
@@ -105,7 +107,7 @@ print(human1.height)
 OOP Principles:
 4 prinsipi mövcuddur -> Inheritance, Polymorphism, Encapsulation, Abstraction
 
-Inheritance - Miras almaq (Yəni Sub classın davranış və xüsusiyyətlərini child class-a ötürülməsi)
+Inheritance - Miras almaq (Yəni Parent classın davranış və xüsusiyyətlərini child class-a ötürülməsi)
 Polymorphism - Çoxşaxəlilik (Yəni, class daxilindəki eyni adlı funksiyaların child class-larda fərqli davranması)
 Encapsulation - Kapsullama (Protected və private metodlar)
 Abstraction - Abstrakt siniflər (Yəni, Abstract class daxilində olan metodların child classlarda mütləq şəkildə yenidən təyin olunması.)

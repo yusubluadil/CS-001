@@ -1,4 +1,4 @@
-# Inheritance - Miras almaq (Yəni Sub classın davranış və xüsusiyyətlərini child class-a ötürülməsi)
+# Inheritance - Miras almaq (Yəni Parent classın davranış və xüsusiyyətlərini child class-a ötürülməsi)
 
 
 class Person:
@@ -18,7 +18,6 @@ class Designer(Person):
     def __init__(self, name, surname, age, tool) -> None:
         super().__init__(name, surname, age)
         self.tool = tool
-
 
 
 person1 = Person('Xaliq', 'Məmmədov', 20)
